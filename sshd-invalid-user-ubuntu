@@ -1,0 +1,5 @@
+Sample Message:
+Jan 10 10:07:43 host-name sshd[34482]: Invalid user test-user from 1.2.3.4 port 48636
+
+Grok Filter:
+%{SYSLOGTIMESTAMP: ssh-invalid-user-timestamp} %{SYSLOGHOST: ssh-invalid-user-host} %{SYSLOGPROG}\[%{DATA:pid}]: Invalid user %{USERNAME:ssh_invalid_user} from %{IP:ssh_invalid_user_client_ip}
