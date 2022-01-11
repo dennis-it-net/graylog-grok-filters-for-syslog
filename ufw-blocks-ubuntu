@@ -1,0 +1,6 @@
+Sample Message:
+
+Jan 11 06:52:02 hostname-or-ip kernel: [763932.814652] [UFW BLOCK] IN=eth0 OUT= MAC=01:02:03:04:05:06:07:08:09:ab:cd:ef:01:23 SRC=1.2.3.4 DST=1.1.1.1 LEN=40 TOS=0x00 PREC=0x00 TTL=241 ID=54209 PROTO=TCP SPT=42405 DPT=5528 WINDOW=1024 RES=0x00 SYN URGP=0
+
+Grok Filter:
+%{SYSLOGTIMESTAMP: ufw_timestamp} %{SYSLOGHOST: ufw_host} %{SYSLOGPROG: ufw_program} \[%{DATA:unknow_data}] \[UFW %{WORD:ufw_action}] IN=%{DATA:ufw_interface} OUT= MAC=%{DATA:ufw_mac} SRC=%{IP:ufw_src_ip} DST=%{IP:ufw_dest_ip} LEN=%{INT:ufw_pack_len} TOS=%{DATA:ufw_tos_data} PREC=%{DATA:ufw_prec_data} TTL=%{INT:ufw_ttl_data} ID=%{DATA:ufw_id_data} PROTO=%{WORD:ufw_protocol}(%WINDOW=%{DATA:ufw_window_data})?(%RES=%{DATA:ufw_res_data})?(%{WORD:ufw_packetsynack})?(%URGP=%{DATA:ufw_urgp_data})? SPT=%{INT:ufw_src_port} DPT=%{INT:ufw_dest_port}
