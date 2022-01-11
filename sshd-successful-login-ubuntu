@@ -1,4 +1,4 @@
-Sample Message:
+Sample Message (via public key):
 Jan 10 10:02:48 host-name sshd[34343]: Accepted publickey for testuser from 1.2.3.4 port 48568 ssh2: RSA SHA256:lVip6KmeE23n5+fMEZ1Duhf8uQRWEq5e8YNgwjU0boQ
 
 Grok Filter:
