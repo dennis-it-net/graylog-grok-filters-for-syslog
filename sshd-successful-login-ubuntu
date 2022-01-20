@@ -3,3 +3,6 @@ Jan 10 10:02:48 host-name sshd[34343]: Accepted publickey for testuser from 1.2.
 
 Grok Filter:
 %{SYSLOGTIMESTAMP: ssh-success-timestamp} %{SYSLOGHOST: ssh-success-host} %{SYSLOGPROG}\[%{DATA:pid}]: Accepted publickey for %{USERNAME:ssh_success_user} from %{IP:ssh_success_client_ip}
+
+
+*This filter also works for centos 7
